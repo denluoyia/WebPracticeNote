@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" /> <!--国际编码集UTF-8, 中文编码:GBK GB2312-->
+		<meta name="keywords" content="html+css 基础知识" /> <!--关键词-->
+		<meta name="description" content="" /> <!--描述信息-->
+		<title>html+css基础知识01</title>
+
+		<style type="text/css">
+			body{
+				margin: 0 100px 100px 100px;
+			}
+			.h1-title {
+				text-align: center;
+				color: #ee2312;
+			}
+			h2{
+				color: #426ab3;
+			}
+			.test{
+				padding-left: 30px;
+			}
+			table tr td, th{
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+    <!--body start 网页上要展示出来的内容-->
+	<body>
+		<h1 class="h1-title">html+css基础知识01</h1>
+		<div class="main">
+			<!--段落标签-->
+			<h2>01. 段落标签：p</h2>
+			<div class="test">
+				<p>谁能坦然挥别过往的愚蠢,在只剩明天之前;谁不借口时间 挥霍和颓废,在只剩昨日之前。</p>
+			</div>
+
+			<!--标题标签-->
+			<h2>02. 标题标签：hx</h2>
+			<div class="test">
+				标题标签有h1、h2、h3、h4、h5、h6，依据重要性呈递减。
+				<h1>一级标题</h1>
+				<h2>二级标题</h2>
+				<h3>三级标题</h2>
+				<h4>四级标题</h4>
+				<h5>五级标题</h5>
+				<h6>六级标题</h6>
+			</div>
+
+			<!--水平横线-->
+			<h2>03. 水平横线hr</h2>
+			<div class="test">
+				<hr />
+			</div>
+
+			<!--强调语气<strong>和<em>标签-->
+			<h2>04. 强调语气strong和em标签</h2>
+			<div class="test">
+				em: <em>表示强调 表现为斜体字</em> <br/>
+				strong: <strong>表示更强烈的强调 表现为粗体字</strong>
+			</div>
+			
+			<!--强调语气<strong>和<em>标签-->
+			<h2>05. 引用标签之短引用q和长引用blockquote</h2>
+			<div class="test">
+				<h3>1.浏览器对q标签的解析是添加双引号:</h3>
+				最初知道庄子，是从一首诗<q>庄生晓梦迷蝴蝶。望帝春心托杜鹃。</q>开始的。<br/>
+
+				<h3>2.浏览器对blockquote标签的解析是缩进样式: </h3>
+				<blockquote>暗淡轻黄体性柔，情疏迹远只香留。何须浅碧深红色，自是花中第一流。</blockquote>
+			</div>
+
+			<!--其他常用小标签：br, &bnsp address,code,pre-->
+			<h2>06. 其他常用小标签</h2>
+			<div class="test">
+				<h3>1.换行标签br</h3>
+				开始换行<br/>换行后续
+				<h3>2.空格标签&nbsp</h3>
+				六个哈：哈哈哈&nbsp哈哈哈
+				<h3>3.address标签</h3>
+				<address>联系地址信息</address>
+				<address>文档编写：Alice 深圳市福田区文化创意园A栋</address>
+				<address>本文的作者：<a href="mailto:alice@imooc.com">Alice</a></address>
+				<h3>4.加一行代码code标签，加多行代码用pre标签</h3>
+				1. 你知道这行代码<code>var sum = a + b; </code>的意思吗？<br />
+				2. 多行代码用pre标签：
+				<pre>
+					var a = 10;
+					var b = 60;
+					var sum = a + b;
+				</pre>
+			</div>
+
+			<!--无序列表ul/有序列表ol-->
+			<h2>07. 无序列表ul和有序列表ol</h2>
+			<div class="test">
+				<h3>1.无序列表 </h3>
+				<ul type="disc">
+					<li>苹果</li>
+					<li>香蕉</li>
+				</ul>
+				<ul type="square">
+					<li>苹果</li>
+					<li>香蕉</li>
+				</ul>
+				<ul type="circle">
+					<li>苹果</li>
+					<li>香蕉</li>
+				</ul>
+				<h3>2.有序列表 </h3>
+				<ol>
+					<li>苹果</li>
+					<li>香蕉</li>
+				</ol>
+				<ol type="A" start="B">
+					<li>苹果</li>
+					<li>香蕉</li>
+				</ol>
+				<ol type="I">
+					<li>苹果</li>
+					<li>香蕉</li>
+				</ol>
+			</div>
+
+			<!--08. table表格-->
+			<h2>08. table表格</h2>
+			<div class="test">
+				<table summary="本表格记录2012年到2013年库存记录，记录包括U盘和耳机库存量">
+				  <caption>2012年到2013年库存记录</caption>
+				  <tr>
+					<th>产品名称 </th>
+					<th>品牌 </th>
+					<th>库存量（个） </th>
+					<th>入库时间 </th>
+				  </tr>
+				  <tr>
+					<td>耳机 </td>
+					<td>联想 </td>
+					<td>500</td>
+					<td>2013-1-2</td>
+				  </tr>
+				  <tr>
+					<td>U盘 </td>
+					<td>金士顿 </td>
+					<td>120</td>
+					<td>2013-8-10</td>
+				  </tr>
+				  <tr>
+					<td>U盘 </td>
+					<td>爱国者 </td>
+					<td>133</td>
+					<td>2013-3-25</td>
+				  </tr>
+				</table>
+			</div>
+
+			<!--09. a标签-->
+			<h2>09. a标签</h2>
+			<div class="test">
+				<a href="#">点我连接到</a>
+				a标签的四种伪类选择器: <br/> 
+				a:link{color:#000000;} <br/>  
+				a:active{color:#ff0000;}   <br/> 
+				a:visited{color:#fff;}  <br/>  
+				a:hover{color:#00ff00;} <br/> 
+				在新的浏览器窗口中打开,设置target为:_blank
+				<a href="../../../index_right.html" target="_blank">在新的浏览器中打开连接</a>
+			</div>
+
+			<!--10. img图片标签-->
+			<h2>10. img图片标签</h2>
+			<div class="test">
+				<p>菲茨杰拉德，二十世纪美国文学巨擘之一，兼具作家和编剧双重身份。他以诗人的敏感和戏剧家的想象为"爵士乐时代"吟唱华丽挽歌，其诗人和梦想家的气质亦为那个奢靡年代的不二注解。</p>
+				<img src="http://img.mukewang.com/52da54ed0001ecfa04120172.jpg" title="电影介绍"> 
+				<br/ >
+				img标签的属性介绍：<br/>
+				1、src：标识图像的位置；<br/>
+				2、alt：指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本；<br/>
+				3、title：提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)；<br/>
+				4、图像可以是GIF，PNG，JPEG格式的图像文件。<br/>
+			</div>
+
+
+			<!--11. 表单-->
+			<h2>11. 表单</h2>
+			<div class="test">
+			form: 表单<br />
+			method: get/post <br />
+			action: 服务器文件 <br/>
+				<form method="GET" action="">
+					<label for="username">用户名：</label>
+					<input type="text" name="username" value=""></input></br/>
+					<label for="password">密码：</label>
+					<input type="password" name="password" value=""></input></br/>
+					<input type="submit" value="确定"  name="submit" />
+				    <input type="reset" value="重置" name="reset" />
+				</form>
+			</div>
+
+			<!--12. 文本域-->
+			<h2>12. 文本域</h2>
+			<div class="test">
+				<label>个人简介:</label> <br/>
+				<textarea rows="10" cols="50">在这里输入内容...</textarea>
+			</div>
+
+
+			<!--13. 单选框和复选框-->
+			<h2>13. 单选框和复选框</h2>
+			<div class="test">
+				<form action="save.php" method="post" >
+					<label>性别:</label>
+					<label>男</label>
+					<input type="radio" value="1"  name="gender" />
+					<label>女</label>
+					<input type="radio" value="2"  name="gender" />
+					<br />
+					<label>爱好:</label>
+					<label>阅读</label>
+					<input type="checkbox" value="1"  name="hobby" />
+					<label>音乐</label>
+					<input type="checkbox" value="2"  name="hobby" />
+					<label>运动</label>
+					<input type="checkbox" value="3"  name="hobby" />
+					<label>书法</label>
+					<input type="checkbox" value="1"  name="hobby" />
+				</form>
+				说明:<br />
+				1、type: 当type="radio" 时，控件为单选框,当 type="checkbox" 时，控件为复选框 <br />
+				2、value：提交数据到服务器的值（后台程序PHP使用）<br />
+				3、name：为控件命名，以备后台程序 ASP、PHP 使用 <br />
+				4、checked：当设置 checked="checked" 时，该选项被默认选中 <br />
+			</div>
+
+			<!--14. 下拉列表-->
+			<h2>14. 下拉列表 节省空间</h2>
+			<div class="test">
+				<!--下拉列表进行单选-->
+				<h3>下拉列表进行单选</h3>
+				<form method="post" action="">
+					<label>爱好:</label>
+					<select>
+						<option value="看书">看书</option>
+						<!-- slected="seleted"默认选中-->
+						<option value="旅游" selected="selected">旅游</option>
+						<option value="运动">运动</option>
+						<option value="购物">购物</option>
+					</select>
+				</form>
+
+				<!--下拉列表进行多选-->
+				<h3>下拉列表进行多选</h3>
+				<form method="post" action="">
+					<label>爱好:</label>
+					<select multiple="multiple">
+						<option value="看书">看书</option>
+						<!-- slected="seleted"默认选中-->
+						<option value="旅游" selected="selected">旅游</option>
+						<option value="运动">运动</option>
+						<option value="购物">购物</option>
+					</select>
+				</form>
+			</div>
+
+			<!--15. form表单中的label标签-->
+			<h2>15. form表单中的label标签</h2>
+			<div class="test">
+				注意：label标签的 for 属性中的值应当与相关控件的 id 属性值一定要相同。
+			</div>
+			
+		</div>
+	</body>
+	<!--body end-->
+</html>

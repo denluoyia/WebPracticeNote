@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>弹性盒子模型flex</title>
+		<!-- base link style script-->
+		<style type="text/css">
+			html, body, div, ul, li{
+				margin: 0px;
+				padding: 0px;
+			}
+			.box{
+				width: 600px;
+				margin: 20px auto;
+				box-shadow: 0 0 10px 0 #000;
+			}
+			.box ul li{
+				width: 60px;
+				height: 60px;
+				list-style: none;
+				font-size:26px;
+				color: #fff;
+				line-height: 60px;
+				text-align: center;
+			}
+			.box ul li:nth-child(1){background-color: #000}
+			.box ul li:nth-child(2){background-color: #006600}
+			.box ul li:nth-child(3){background-color: #cc3333}
+			.box ul li:nth-child(4){background-color: #ccff33}
+			.box ul li:nth-child(5){background-color: #CCCCFF}
+			.box ul li:nth-child(6){background-color: #B0E0E6}
+
+			#box1 ul{
+				display: flex; 
+				flex-direction:row;/*水平分布*/
+				/*水平逆分布*/
+				/* flex-direction:row-reverse; */
+			}
+			#box2 ul{
+				display: flex; 
+				/*垂直分布*/ /*垂直逆分布*/
+				flex-direction:column;
+				flex-direction:column-reverse;
+			}
+			#box3 ul{
+				display: flex; 
+				/* flex-wrap: nowrap:nowrap;(默认值，不换行) */
+				flex-wrap: wrap;
+				width: 250px;
+				/*换行反转*/
+				/* flex-wrap:wrap-reverse; */
+
+			}
+			/*justify-content 水平对齐*/
+			#box4 ul{
+				display: flex; 
+				flex-direction: row;
+				/*左对齐*/
+				justify-content:flex-start;
+				/*右对齐*/
+				justify-content:flex-end; 
+				/*两端对齐*/
+				justify-content:space-between;
+				/*每个项目两侧间隔相等 */
+				justify-content:space-around;
+				/*居中*/
+				justify-content: center;
+			}
+			/* 竖直对齐align-items */
+			#box5 ul{
+				height: 200px;
+				display: flex; 
+				/*水平分布*/ /*主轴 从右到左排列*/
+				flex-direction:row;
+				align-items:baseline; /*第一行文字的基线对齐*/
+				align-items:stretch; /*顶部对齐*/
+				align-items:flex-end; /*底部对齐*/
+				align-items:center; /*垂直居中对齐*/
+				
+			}
+			#box5_1{
+				font-size: 40px;
+			}
+		</style>
+	</head>
+
+ <body>
+	<div class="box" id="box1">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		<ul>
+	</div>
+	<div class="box" id="box2">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		<ul>
+	</div>
+	<div class="box" id="box3">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		<ul>
+	</div>
+	<div class="box" id="box4">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		<ul>
+	</div>
+
+	<div class="box" id="box5">
+		<ul>
+			<li id="box5_1">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		<ul>
+	</div>
+ </body>
+</html>

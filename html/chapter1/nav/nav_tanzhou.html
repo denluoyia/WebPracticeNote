@@ -1,14 +1,123 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="keywords" content="" />
-		<meta name="description" content="" />
-		<title></title>
-		<!-- base link style script -->
-	</head>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<title>潭州官网头部导航栏</title>
+	<!-- base link style script -->
+	<style type="text/css">
+		html, body, div, ul, li, a, img{
+			margin: 0px;
+			padding: 0px;
+		}
+		html{
+			/*overflow-x:hidden;*/
+			/*发现一个现象，如果设置宽度为100%后，再设置padding，底部的滚动条就会出现 */
+		}
+		.header{
+			width:100%;
+			height: 100px;
+			box-shadow: 0px 2px 2px #ddd;
+		}
+		.header,.h-top,.h-nav{
+			min-width: 1200px;
+		}
+		.h-top{
+			width:100%;
+			height: 30px;
+			background-color: #333;
+		}
+		.top-left{
+			margin-left: 35px;
+		}
+		.header li{
+			float: left;
+			list-style: none;
+		}
+		.h-top ul.user-in{
+			position:relative;
+			float:right;
+			margin-right:35px;
+		}
+		.h-top a{
+			text-decoration: none;
+			color: #aaa;
+			height: 14px;
+			line-height: 14px;
+			font-size: 12px;
+			padding: 0px 20px;
+			display: inline-block;
+			margin: 8px 0px;
+			border-right: 1px solid #999;
+		}
+		.h-top a:hover{
+			color: white;
+			transition:all 0.4s;
+		}
 
-	<body>
-		
+		.header .h-nav{
+			height: 70px;
+		}
+		.h-nav a.logo{
+			float:left;
+			vertical-align: middle;
+			display: inline-block;
+			margin-top: 16px;
+			margin-left: 200px; 
+		}
+		.h-nav ul{
+			height: 70px;
+			float: left;
+			margin-left: 10px;
+		}
+		.h-nav ul li a{
+			text-decoration: none;
+			display: inline-block;
+			height: 70px;
+			line-height: 70px;
+			padding: 0px 20px;
+			color: #4f4f4f;
+		}
+		.h-nav ul li a:hover{
+			color: #f45555;
+		}
+
+	</style>
+ </head>
+ <body>
+		<div class="header">
+			<div class="h-top">
+				<ul class="top-left">
+					<li><a href="#" style="border-left: 1px solid #999;">潭州商城</a></li>
+					<li><a href="#">潭州社区</a></li>
+					<li><a href="#">潭州官网</a></li>
+					<li><a href="#">潭州招聘</a></li>
+					<li><a href="#">天猫旗舰店</a></li>
+					<li><a href="#">SEO研究中心</a></li>
+					<li><a href="#">考试在线</a></li>
+					<li><a href="#">VIP学员网</a></li>
+				</ul>
+
+				<ul class="user-in">
+					<li><a href="#">登陆</a></li>
+					<li><a href="#" style="border-right: none">注册</a></li>
+				</ul>
+			</div>
+
+			<div class="h-nav">
+				<a href="#" class="logo">
+					<img src="images/head_logo.png" alt="潭州logo" width="198px" height="38px"/>
+				</a>
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">全部课程</a></li>
+					<li><a href="#">宣传视频</a></li>
+					<li><a href="#">潭州招聘</a></li>
+					<li><a href="#">社区</a></li>
+					<li><a href="#">客户端</a></li>
+				</ul>
+			</div>
+		</div>
 	</body>
 </html>

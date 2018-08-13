@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>文本框</title>
+		<style type="text/css">
+			body{
+				width: 1000px;
+				margin: 0 auto;
+				padding-top: 30px;
+			}
+			.span{
+				white-space: pre;
+			}
+			
+			#inp1{
+				color: #ccc;
+			}
+
+			.error{
+				border: 1px solid red;
+			}
+			.right{
+				border: 1px solid green;
+			}
+			
+		</style>
+		
+		
+	</head>
+
+	<body>
+		用户名：<input id="inp" type="text" value="我是小菠萝" />
+		<button>禁用</button><button>解禁</button>
+		<br/><br/>
+		<span class="label2">密    码：</span><input type="password" value="1234567" />
+
+		<!--文本框的聚焦和失去焦点监听-->
+		<br/> <br/>
+		placeholder：<input type="text" placeholder="我是placeholder" />
+		<br/><br />
+		京东：<input id="inp1" type="text" value="我是京东" /><br><br>
+
+
+		<!--用户注册显示高亮-->
+		账号：<input type="text" onblur="fn(this)"/> <br><br>
+		密码：<input type="password" onblur="fn(this)"/>
+		
+		<script>
+			var inp = document.getElementById("inp");
+			var btns = document.getElementsByTagName("button");
+			btns[0].onclick = function(){
+				inp.disabled = true;
+			}
+			btns[1].onclick = function(){
+				inp.disabled = false;
+			}
+
+		   var inp1 = document.getElementById("inp1");
+		   inp1.onfocus = function(){ //获取焦点
+				//判断 如果内容是“我是京东” 则就清空
+				inp1.style.color = "#000";
+				if(inp1.value == "我是京东"){
+					inp1.value = "";
+				}
+			}
+			inp1.onblur = function(){ //离开失去焦点
+				if(this.value == ""){
+					inp1.style.color = "#ccc";
+					inp1.value = "我是京东";
+				}
+			}
+
+			function fn(aaa){
+				if(aaa.value.length < 6 || aaa.value.length > 12){
+					aaa.className = "error";
+				}else{
+					aaa.className = "right";
+				}
+			}
+		</script>
+	</body>
+</html>

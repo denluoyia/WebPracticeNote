@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>小画廊</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			h1{
+				text-align: center;
+				margin-top: 20px;
+			}
+			
+			body{
+				width: 700px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			ul{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				padding: 0px 20px;
+			}
+			ul li{
+				list-style: none;
+				float: left;
+				margin: 20px 0;
+			}
+			.img_big{
+				display: block;
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>我的小画廊</h1>
+		<div class="hl">
+			<ul>
+				<li><img class="img_samll" src="images/hl_01.jpg" title="图片1" width="150px" height="100px"/></li>
+				<li><img class="img_samll" src="images/hl_02.jpg" title="图片2" width="150px" height="100px"/></li>
+				<li><img class="img_samll" src="images/hl_03.jpg" title="图片3" width="150px" height="100px"/></li>
+			</ul>
+
+			<img id="img_big" src="" width="700px" height="400px"> 700 X 400</img>
+			<p id="des">选择一张</p>
+		</div>
+		
+		<script>
+			var imgSmallArr = document.getElementsByClassName("img_samll");
+			var imgBig = document.getElementById("img_big");
+			var des = document.getElementById("des");
+			console.log(des);
+			console.log(imgSmallArr);
+			for(var i = 0; i < imgSmallArr.length; i++){
+				imgSmallArr[i].onclick = function(){
+					imgBig.src = this.src;
+					des.innerHTML = this.title; 
+				}
+			}
+		</script>
+	</body>
+</html>

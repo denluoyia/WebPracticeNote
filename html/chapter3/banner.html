@@ -1,0 +1,197 @@
+<!doctype html> </!--声明文档类型 html网页-->
+<html>
+	<head> <!--浏览器的信息-->
+		<meta charset="utf-8" /> <!--编码集:国际编码集-->
+		<title>图片自动轮播</title>
+		<meta name="keywords" content="轮播 动画" /> <!--关键词 SEO搜索优化-->
+		<meta name="description" content="" /> <!--描述信息-->
+			
+		<!--css样式-->
+		<style style="text/css"> 
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			.box{
+				width: 500px;
+				height: 200px;
+				border: 1px solid #ccc;
+				margin: 100px auto;
+			}
+
+			#inner{
+				width: 500px;
+				height: 200px;
+				position: relative;
+				overflow: hidden; /*超过区域则隐藏*/
+			}
+			
+			ul{
+				position: absolute;
+				width: 2500px;
+				left: 0;
+			}
+			li{
+				list-style: none;
+				float: left;
+			}
+
+			ol{
+				position: absolute;
+				right: 10px;
+				bottom: 10px;
+			}
+
+			.box ol li {
+				width: 20px;
+				height: 20px;
+				background: #fff;
+				display: inline-block;
+				text-align: center;
+				margin: 2px;
+				border: 1px solid #ccc;
+				line-height: 20px;
+				cursor: pointer;
+			}
+
+			.box ol .current{
+				background: orange;
+			}
+
+			#btn_arror span{
+				width: 40px;
+				height: 40px;
+				display: inline-block;
+				position: absolute;
+				left: 5px;
+				top: 50%;
+				margin-top: -20px;
+				background: #000;
+				cursor: pointer;
+				font-family: "黑体";
+				font-size: 30px;
+				color: #fff;
+				opacity: 0.3;
+				border: 1px solid #fff;
+				text-align: center; 
+			}
+
+			#btn_arror #right{
+				right: 5px;
+				left: auto;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var inner = document.getElementById("inner");
+				var ul = inner.children[0];
+				var ol = inner.children[1];
+				var btnLeftRight = inner.children[2];
+				var btnArr = btnLeftRight.children;
+				var imgWidth = inner.offsetWidth;
+				var currentIndex = 0;
+
+				for(var i = 0; i < ul.children.length; i++){
+					var newLi = document.createElement("li");
+					newLi.innerHTML = i + 1;
+					ol.appendChild(newLi);
+				}
+
+				var olClidrenArr = ol.children;
+				olClidrenArr[0].className = "current";
+
+				//右下角焦点移动
+				for(var i = 0; i < olClidrenArr.length; i++){
+					olClidrenArr[i].index = i;
+					olClidrenArr[i].onmouseover = function(){
+						//排他思想
+						for(var j = 0; j < olClidrenArr.length; j++){
+							olClidrenArr[j].className = "";
+						}
+						this.className = "current";
+						currentIndex = this.index;
+						//图片进行动画切换
+						animate(ul, -imgWidth * this.index)
+					}
+				}
+
+				function animate(ele, target){
+					clearInterval(ele.timer);
+					var speed = ele.offsetLeft < target ? 10 : -10;
+					ele.timer = setInterval(function(){
+						var val = target - ele.offsetLeft;
+						ele.style.left = ele.offsetLeft + speed + "px";
+						if(Math.abs(val) < Math.abs(speed)){
+							ele.style.left = target + "px";
+							clearInterval(ele.timer);
+						}
+					}, 10);
+				}
+
+				var timer = setInterval(autoPlay(), 3000);
+				inner.onmouseover = function(){
+					btnLeftRight.style.display = "block";
+					clearInterval(timer);
+				}
+				inner.onmouseout = function(){
+					btnLeftRight.style.display = "none";
+					timer = setInterval(autoPlay, 3000);
+				}
+				
+				btnArr[0].onclick = function(){
+					currentIndex--;
+					if(currentIndex < 0){
+						ul.style.left = -imgWidth * (ul.children.length-1) + "px";
+						currentIndex = ul.children.length-1;
+					}
+					animate(ul, -currentIndex * imgWidth);
+					for(var i = 0; i < olClidrenArr.length; i++){
+						olClidrenArr[i].className = "";
+					}
+					olClidrenArr[currentIndex].className = "current";
+				}
+
+				btnArr[1].onclick = function(){
+					autoPlay();
+				}
+
+				function autoPlay(){
+					currentIndex++;
+					if(currentIndex >= ul.children.length){
+						ul.style.left = 0 + "px";
+						currentIndex = 0;
+					}
+					animate(ul, -imgWidth * currentIndex);
+
+					//排他思想
+					for(var i = 0; i < olClidrenArr.length; i++){
+						olClidrenArr[i].className = "";
+					}
+					olClidrenArr[currentIndex].className = "current";
+				}
+			}
+		</script>
+	</head>
+
+	<body> <!--网页身体 可见区域-->
+		<div class="box">
+			<div id="inner">
+				<ul> <!--img-->
+					<li><img src="images/1.jpg" /></li>
+					<li><img src="images/2.jpg" /></li>
+					<li><img src="images/3.jpg" /></li>
+					<li><img src="images/4.jpg" /></li>
+					<li><img src="images/5.jpg" /></li>
+				</ul>
+
+				<ol> 
+					<!--<li class="current">1</li> -->
+				</ol>
+				<div id="btn_arror">
+					<span id="left"> < </span>
+					<span id="right"> > </span>
+				</div>
+			</div>
+		</div>
+	<body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+	<head> <!-- 网页头部 浏览器所需要的信息-->
+		<meta charset="UTF-8"> <!--编码集 国际编码UTF-8-->
+		<title>Title</title>
+		<meta name="Keywords" content=""> <!--关键词 SEO搜索引擎优化 权重-->
+		<meta name="Description" content=""> <!--描述信息-->
+		
+		<!--base link style script-->
+		<style type="text/css">
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			.box1{
+				padding: 10px;
+				position: relative;
+				height: 400px;
+				background-color: #ededed;
+			}
+
+			button{
+				margin: 10px;
+			}
+
+			.box2{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				position: absolute;
+				left: 0px;
+				top: 60px;
+			}
+
+			.box3{
+				width: 100px;
+				height: 100px;
+				background-color: #000;
+				position: absolute;
+				left: 0px;
+				top: 200px;
+			}
+	
+		</style>
+	</head>
+
+	<body><!--网页身体 用户可见区域-->
+		<div class="box1">
+			<button>运动到200</button>
+			<button>运动到400</button>
+			<div class="box2"></div>
+			<div class="box3"></div>
+		</div>
+
+		<script>
+			var btnArr = document.getElementsByTagName("button");
+			var box2 = document.getElementsByClassName("box2")[0];
+			var box3 = document.getElementsByClassName("box3")[0];
+			btnArr[0].onclick = function(){
+				animate(box2, 200);
+				animate(box3, 200);
+			}
+
+			btnArr[1].onclick = function(){
+				animate(box2, 400);
+				animate(box3, 400);
+			}
+
+			function animate(ele, target){
+				clearInterval(ele.timer);
+				var speed = target > ele.offsetLeft ? 10 : -10;
+
+				ele.timer = setInterval(function(){
+					var val = target - ele.offsetLeft;
+					ele.style.left = ele.offsetLeft + speed + "px";
+					if (Math.abs(val) < Math.abs(speed)){
+						ele.style.left = target + "px";
+						clearInterval(ele.timer);
+					}
+				}, 30)
+			}
+
+		</script>
+	</body>
+</html>

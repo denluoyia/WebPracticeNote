@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>缓动动画</title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background-color: pink;
+				top: 60px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button>移动到200</button>
+		<button>移动到400</button>
+		<div></div>
+
+		<script>
+			var box = document.getElementsByTagName("div")[0];
+			var btnArr = document.getElementsByTagName("button");
+			btnArr[0].onclick = function(){
+				animate(box, 200);
+			}
+			btnArr[1].onclick = function(){
+				animate(box, 400);
+			}
+
+			function animate(ele, target){
+				clearInterval(ele.timer);
+				ele.timer = setInterval(function(){
+					var speed = (target - ele.offsetLeft) / 10;
+					speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+					ele.style.left = ele.offsetLeft + speed + "px";
+					if(Math.abs(target - ele.offsetLeft) < Math.abs(speed)){
+						ele.style.left = target + "px";
+						clearInterval(ele.timer);
+					}
+				}, 30);
+			}
+		</script>
+	</body>
+</html>

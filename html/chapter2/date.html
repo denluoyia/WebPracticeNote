@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>日期Date体验</title>
+		<style type="text/css">
+			.box {
+				margin: 100px auto;
+			}
+			p{
+				text-align: center;
+				font-size: 24px;
+				color: #990000;
+				font-weight:bold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<p></p>
+		    <p></p>
+		</div>
+	
+		<script>
+			var p1 = document.getElementsByTagName("p")[0];
+			var p2 = document.getElementsByTagName("p")[1];
+			var date = new Date();
+			var weekArr = ["日", "一", "二", "三", "四", "五", "六"];
+			//问题补充，月日 自动补充0
+			var month = (date.getMonth()+1) < 10 ? "0" + (date.getMonth()+1) : (date.getMonth()+1);
+			var day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+			p1.innerHTML = "今天是: " + date.getFullYear() + "年" + month + "月" + day + "日" + " 星期" + weekArr[date.getDay()];
+
+			//发布会倒计时 定时器
+			var toDate = new Date("2019/01/01 20:00:00");
+			var t = setInterval(function(){
+				var nowDate = new Date();
+				// getTime()获取时间搓 单位为毫秒 从1970年算起
+				var daltaTime = parseInt((toDate.getTime() - nowDate.getTime()) / 1000); 
+				var day = parseInt(daltaTime / 60 / 60 / 24);
+				var hh = parseInt(daltaTime / 60 / 60 % 24);
+				var mm = parseInt(daltaTime / 60 % 60);
+				var ss = parseInt(daltaTime % 60);
+				p2.innerHTML = "距离苹果发布会还有：" + day + "天" + hh + "时" + mm + "分" + ss + "秒";
+			}, 1000);
+		</script>
+	</body>
+</html>

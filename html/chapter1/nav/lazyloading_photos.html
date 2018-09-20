@@ -1,0 +1,108 @@
+<!doctype html> <!--声明文档类型HTML5-->
+<html>
+	<head> <!--和浏览器进行交流的-->
+		<meta charset="utf-8" /> <!--编码集-->
+		<title>图片懒加载技术</title>
+		<meta name="author" content="denluoyia" />
+		<meta name="keywords" content="图片 懒加载 lazy loading" />
+		<meta name="description" content="图片懒加载" />
+		
+		<!--SEO 优化搜素引擎-->
+
+		<!-- html 骨架 / css 表现 / js 行为-->
+		<style> /*css样式表*/
+			body{
+				margin: 0; /*外边距*/
+				padding: 0;
+			}
+			.wrap{
+				overflow: hidden; /*自适应 超出隐藏的功能*/
+				width: 930px;
+				margin: 50px auto;
+
+				/*决定垂直间距line-height*/
+				/* line-height: 0px; */
+				/*决定水平间距font-size*/
+				/*font-size: 0px; */
+				/*
+					inline -> 行内元素 -> 空白节点
+					block -> 块级元素 -> 洁癖：不愿意和别人一行
+					float：造成父级拖线 脱离文档
+				*/
+			}
+			.wrap img{
+				display: block;
+				float: left; /*浮动原理：依次排队*/
+				width: 280px;
+				height: 180px;
+				margin: 10px;
+				border: 2px solid #c7c7c7; /*边框 大小 线型 颜色 */
+				border-radius: 5px; /*圆角*/
+			}
+		</style>
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script src="js/jquery.lazyload.js?v=1.9.1"></script>
+	</head>
+
+	<body> <!--写给用户看的-->
+		<div class="wrap"> <!-- 盒子宽高大小颜色位置 见名之一 -->
+			<!-- img标签四要素 src (width height 真实的宽高) alt="keywords很像 seo让百度等搜索到 不可以乱写" -->
+			<!-- 显示图片的标签 -->
+			<!-- inline 行内元素 空白节点 是由font-size产生的 -->
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片">
+			<img data-original="images/img_02.png" width="533px" height="800px" alt="衣着 图片"> 
+		</div>
+
+		<script type="text/javascript" charset="utf-8">
+			 $(function() {
+				$("img").lazyload({effect: "fadeIn"});
+			});
+		</script>
+	<body>
+</html>
